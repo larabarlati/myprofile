@@ -45,9 +45,11 @@ header {
 
 .menu {
 	background-color: #F0F8FF;
-	position: fixed;
+	box-shadow: 5x 5x 10x #FFFFFF;
 	width: 100vw;
+	position: fixed;
 	top: 0; 
+
 }
 
 .menu ul {
@@ -67,29 +69,71 @@ header {
 a {
 	color: teal;
 	text-decoration: none;
-	
+	font: 24px Comfortaa, cursive;
+
+
 }
 
 a:hover {
 	text-decoration: underline;
 }
 
+.img-portfolio {
+	height: 180px;
+	width: 180px;
+}
+
 .site-subtitle,
 .site-title {
 	color: whitesmoke;
 	text-align: center;
-}
-
-.site-subtitle {
-font-style: bold;
-
+	text-shadow: 5px 5px 5px aquamarine;
 }
 
 .site-title {
 	font-size: 4em;
+
+	}
+
+.site-subtitle {
+font-style: bold;
+font: 34px Lobster, cursive;
+white-space: nowrap; /* para a animação ficar apenas em 1 linha */
+  margin: 0 auto;
+  font-weight: 300;
+  animation: typing 4s steps(25) 1s normal;
+  overflow: hidden;
 }
 
-.img-portfolio {
-	height: 180px;
-	width: 180px;
+/* animação do efeito de digitação */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 18em;
+  }
+}
+
+.site-subtitle:after {
+  content: '|';
+  margin-left: 4px;
+  animation: blink 0.7s infinite;
+}
+
+/* animação do cursor piscando */
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+
+}
+
+
 }
