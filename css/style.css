@@ -64,23 +64,22 @@ header {
 .menu a {
 	display: block;
 	padding: 10px 20px;
+	transition: background-color 1s, color 1s;
+}
+
+.menu a:active, .menu a:hover {
+	background-color: teal;
+	color:white;
 }
 
 a {
 	color: teal;
 	text-decoration: none;
 	font: 24px Comfortaa, cursive;
-
-
 }
 
 a:hover {
 	text-decoration: underline;
-}
-
-.img-portfolio {
-	height: 180px;
-	width: 180px;
 }
 
 .site-subtitle,
@@ -93,11 +92,11 @@ a:hover {
 .site-title {
 	font-size: 4em;
 
-	}
+}
 
 .site-subtitle {
 font-style: bold;
-font: 34px Lobster, cursive;
+font: 34px Lobster;
 white-space: nowrap; /* para a animação ficar apenas em 1 linha */
   margin: 0 auto;
   font-weight: 300;
@@ -109,7 +108,7 @@ white-space: nowrap; /* para a animação ficar apenas em 1 linha */
 @keyframes typing {
   from {
     width: 0;
-  }
+}
   to {
     width: 18em;
   }
@@ -132,8 +131,70 @@ white-space: nowrap; /* para a animação ficar apenas em 1 linha */
   }
 }
 
-
+.contato, .portfolio {
+	padding: 2em;
+	min-height: 100vh;
 }
 
+.contato h2, .portfolio h2 {
+	font-family: Verdana;
+	color: teal;
+	margin-bottom: 1.5em;
+	font-size: 2em;
+}
 
+.portfolio .grid {
+	display: grid;
+	grid-gap: 2em;
+}
+
+@media (min-width: 560px) {
+	.portfolio .grid {
+		grid-template-columns: 240px 240px;
+	}
+}
+
+@media (min-width: 880px) {
+	.portfolio .grid {
+		grid-template-columns: repeat(3, 260px);
+		align-content: center;
+		justify-content: center;
+		height: calc(100vh - 8em - 48px);
+	}
+}
+
+.portfolio figure {
+	text-align: center;
+}
+
+.img-portfolio {
+	height: 180px;
+	width: 240px;
+	object-fit: cover;
+	object-position: left bottom;
+	transition: transform 500ms;
+}
+
+.img-portfolio:hover {
+	transform: scale(1.2) rotate(2deg);
+}
+
+.contato .icons {
+	text-align: center;
+}
+
+.contato a {
+	color: whitesmoke;
+	font-size: 4em;
+	transition: text-shadow 1s; 
+	transition: transform 500ms;
+}
+
+.contato a:hover {
+	transition: scale(1.2);
+}
+
+.contato a:active, .contato a:hover {
+	text-decoration: none;
+	text-shadow: 0px 0px 10px teal;
 }
